@@ -1,10 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RouletteService } from './Roulette.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Roulette';
-}
+export class AppComponent implements OnInit{
+  numbers: number[] = [];
+  constructor(private rouletteService: RouletteService) {}
+
+  ngOnInit(){
+    console.log(this.numbers)
+    this.rouletteService.newNumber.subscribe((number: number) => {
+      this.numbers.push(number);
+    });
+  }
+
+  onStart(){
+    this.rouletteService.start();
+  }
+
+  onStop(){
+    this.rouletteService.stop();
+  }
+
+  onReset(){
+    this.numbers = [];
+  }
+ }
