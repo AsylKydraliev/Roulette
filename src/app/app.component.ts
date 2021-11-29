@@ -11,7 +11,6 @@ export class AppComponent implements OnInit{
   constructor(private rouletteService: RouletteService) {}
 
   ngOnInit(){
-    console.log(this.numbers)
     this.rouletteService.newNumber.subscribe((number: number) => {
       this.numbers.push(number);
     });

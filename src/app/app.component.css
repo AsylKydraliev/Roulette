@@ -1,5 +1,29 @@
 .cells{
   display: grid;
-  grid-template-columns: repeat(20, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(23, 1fr);
+  grid-gap: 5px;
+}
+
+.cell{
+  padding: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  font-family: Luminari, fantasy;
+}
+
+.red{
+  background: red;
+}
+
+.black{
+  background: black;
+}
+
+.zero{
+  background: green;
 }
