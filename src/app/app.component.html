@@ -1,22 +1,23 @@
 <h1>Roulette</h1>
 <div class="form">
-  <button (click)="onStart()">Start</button>
-  <button (click)="onStop()">Stop</button>
-  <button (click)="onReset()">Reset</button>
+  <button (click)="onStart()" class="start" [disabled]="click">Start</button>
+  <button (click)="onStop()" class="stop">Stop</button>
+  <button (click)="onReset()" class="reset">Reset</button>
   <form>
-    <input type="text">
-    <label>
-      <input type="radio">black
-    </label>
-    <label>
-      <input type="radio">red
-    </label>
-    <label>
-      <input type="radio">zero
-    </label>
-    <input type="radio">
-    <span>Balance: 100</span>
+    <input type="text" class="inputBet" #inputBet>
+    <div class="radio">
+      <label>
+        <input type="radio" name="bet" value="black" #black>Black
+      </label>
+      <label>
+        <input type="radio" name="bet" value="red" #red>Red
+      </label>
+      <label>
+        <input type="radio" name="bet" value="zero" #zero>Zero
+      </label>
+    </div>
   </form>
+  <span>Balance: <strong>{{ balance }}</strong> </span>
 </div>
 <hr>
 <div class="cells">

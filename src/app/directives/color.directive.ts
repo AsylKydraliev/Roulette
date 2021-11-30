@@ -8,9 +8,7 @@ export class ColorDirective {
   @Input() set appColor (number: string) {
     const newNumber = parseFloat(number);
     this.color = this.rouletteService.getColor(newNumber);
-    if(newNumber){
-      this.renderer.addClass(this.el.nativeElement, this.color);
-    }
+    this.renderer.addClass(this.el.nativeElement, this.color);
   }
   constructor(private rouletteService: RouletteService, private el: ElementRef, private renderer: Renderer2) {}
 }

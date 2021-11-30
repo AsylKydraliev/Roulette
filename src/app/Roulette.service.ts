@@ -14,7 +14,7 @@ export class RouletteService {
     this.intervalId = setInterval(() =>{
       this.interval = this.generateNumber();
       this.newNumber.emit(this.interval);
-    }, 100);
+    }, 1000);
   }
 
   stop(){
@@ -25,16 +25,16 @@ export class RouletteService {
     if(number >= 1 && number <= 10 || number >= 19 && number <= 28){
       if(number % 2 === 0) {
         this.color = 'black';
-      } else {
+      } else if(number % 2 !== 0){
         this.color = 'red';
       }
     } else if(number >= 11 && number <= 18 || number >= 29 && number <= 36) {
       if(number % 2 === 0) {
         this.color = 'red';
-      } else {
+      } else if(number % 2 !== 0){
         this.color = 'black';
       }
-    } else if (number === 0) {
+    } else if(number === 0) {
       this.color = 'zero';
     } else {
       this.color = 'unknown';
